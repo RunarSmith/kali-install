@@ -17,7 +17,7 @@ echo
 echo "Version: "
 code --version
 echo
-for ext in ms-vscode.powershell coenraads.bracket-pair-colorizer-2 ms-ceintl.vscode-language-pack-fr silofy.hackthebox; do     
+for ext in ms-vscode.powershell ms-ceintl.vscode-language-pack-fr silofy.hackthebox; do     
     echo "Installing VSCode Extension : $ext"
     code --install-extension $ext --force
     echo
