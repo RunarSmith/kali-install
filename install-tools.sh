@@ -14,8 +14,10 @@ echo "=== flameshot (screenshot) =================================="
 sudo apt install flameshot -y -q
 
 echo "============================================================="
-echo "=== evince (pdf) ============================================"
-sudo apt install evince -y -q
+echo "=== Office tools ============================================"
+# evince (pdf)
+# libreoffice
+sudo apt install evince libreoffice libreoffice-l10n-fr -y -q
 
 echo "============================================================="
 echo "=== Chromium web browser ===================================="
@@ -24,7 +26,18 @@ sudo apt install chromium chromium-l10n -y -q
 echo "============================================================="
 echo "=== libraries for win/cross compile ========================="
 sudo apt install -q -y libc6-dev-i386 mingw-w64
+
+# AV evasion
+sudo apt install -q -y shellter
 sudo dpkg --add-architecture i386 && sudo apt-get update && sudo apt-get install wine32 
+
+echo "============================================================="
+echo "=== dictionnaries ==========================================="
+sudo apt install seclists -y -q
+
+echo "============================================================="
+echo "=== web enumeration ========================================="
+sudo apt install gobuster -y -q
 
 echo "============================================================="
 echo "=== FTP ====================================================="
@@ -42,6 +55,7 @@ sudo pure-pw mkdb
 [ -d /ftphome ] || sudo mkdir -p /ftphome
 sudo chown -R ftpuser:ftpgroup /ftphome/
 
+sudo apt install filezilla -y -q
 
 echo "============================================================="
 echo "=== python virtualenv ======================================="
@@ -61,3 +75,7 @@ sudo apt install kerberoast -y -q
 
 [ -d ${ToolsDir}/nmapautomator ] && sudo rm -rf ${ToolsDir}/nmapautomator
 sudo git clone https://github.com/21y4d/nmapAutomator.git  ${ToolsDir}/nmapautomator
+
+echo "============================================================="
+echo "=== bind and reverse shells ================================="
+sudo apt install nishang -y -q
